@@ -1,0 +1,27 @@
+<h1 class="main-container">Rutas
+
+</h1>
+
+<button (click)="filtrarRutas('Interno')" class="btn btn-primary">Mostrar Internos</button>
+<button (click)="filtrarRutas('Externo')" class="btn btn-primary">Mostrar Externos</button>
+
+
+<hr>
+
+<div class="col animated fadeIn fast" *ngFor="let ruta of rutasFiltradas,let i = index">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <p class="card-text">Origen: {{ruta.corigen}}</p>
+                    <p class="card-text">Destino: {{ruta.cdestino}}</p>
+                    <p class="card-text">{{ruta.descripcion}}</p>
+                    <p class="card-text"><small class="text-muted">Precio: {{ruta.precio}}</small></p>
+                    <p class="card-text"><small class="text-muted">Tipo: {{ruta.tipo}}</small></p>
+                    <button (click)="verRuta(i)" type="button" class="btn btn-primary">Ver Ruta</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
